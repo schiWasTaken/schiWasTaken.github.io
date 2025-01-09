@@ -1,16 +1,5 @@
-<?php
-$lang = isset($_GET['lang']) ? $_GET['lang'] : 'en'; // Default to English
-$lang_file = "lang/$lang.php";
-
-if (file_exists($lang_file)) {
-    include($lang_file);
-} else {
-    include("lang/en.php");
-}
-?>
 <!DOCTYPE html>
-<html lang="<?php echo $lang; ?>">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,9 +24,9 @@ if (file_exists($lang_file)) {
                     <li class="nav-item d-none d-lg-block">
                         <div id="navSeparator" class="vr h-100 mx-lg-2"></div>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="#about"><?php echo $lang_strings['aboutNav']; ?></a></li>
-                    <li class="nav-item"><a class="nav-link" href="#portfolio"><?php echo $lang_strings['portfolioNav']; ?></a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact"><?php echo $lang_strings['contactNav']; ?></a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
                 <ul class="navbar-nav ms-auto">
 
@@ -55,8 +44,8 @@ if (file_exists($lang_file)) {
     <!-- Hero Section -->
     <header class="hero bg-light text-center py-5 text-white">
         <div class="container">
-            <h1 class="display-4 fw-bold fade-in"><?php echo $lang_strings['welcome']; ?></h1>
-            <p class="lead fade-in"><?php echo $lang_strings['welcomeSub']; ?></p>
+            <h1 class="display-4 fw-bold fade-in">Hello there!</h1>
+            <p class="lead fade-in">Welcome to my portfolio! I\'m an Information Technology Student | Dynamic Problem Solver | Junior Developer</p>
         </div>
     </header>
 
@@ -64,10 +53,10 @@ if (file_exists($lang_file)) {
     <section id="about" class="container py-5">
         <div class="row">
             <div class="col-md-6 fade-in">
-                <h2 class="fw-bold"><?php echo $lang_strings['about']; ?></h2>
+                <h2 class="fw-bold">About Me</h2>
                 <hr>
                 <p>
-                    <?php echo $lang_strings['aboutText']; ?>
+                    IT student with practical experience in full-stack development, networking, and game development. Proficient in multiple programming languages and frameworks, including Python, Java, C#, React.js, and Flutter. Certified in Red Hat Linux, with strong problem-solving skills with a keen eye for optimizing both functionality and design. Seeking a junior developer or network engineer role to apply technical expertise and contribute to innovative projects.
                 </p>
             </div>
             <div class="col-md-6 fade-in">
@@ -81,31 +70,37 @@ if (file_exists($lang_file)) {
     <!-- Portfolio Section -->
     <section id="portfolio" class="py-5">
         <div class="container">
-            <h2 class="fw-bold text-center mb-5 fade-in"><?php echo $lang_strings['portfolio']; ?></h2>
+            <h2 class="fw-bold text-center mb-5 fade-in">Portfolio</h2>
             <div class="row">
                 <!-- Portfolio Card 1 -->
                 <div class="col-md-4 fade-in">
                     <div class="rounded mb-3 card portfolio-item" style="height: 600px;" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
                         <img src="assets/project1.png" class="rounded-top" style="width: 100%; height: 100%; object-fit: contain;">
                     </div>
-                    <h5 class="fw-bold"><?php echo $lang_strings['project1']; ?></h5>
-                    <p><?php echo $lang_strings['project1Text']; ?></p>
+                    <h5 class="fw-bold">MindBreak</h5>
+                    <p><span class="text-muted">GitHub Repository: </span><a href="https://github.com/SCUMBAG0LEE/MindBreak">SCUMBAG0LEE/MindBreak</a>
+                        <br>
+                        A mobile quiz game built using React.js, designed to engage users through interactive gameplay and stimulating challenges.</p>
                 </div>
                 <!-- Portfolio Card 2 -->
                 <div class="col-md-4 fade-in">
                     <div class="rounded mb-3 card portfolio-item" style="height: 600px;" data-bs-toggle="modal" data-bs-target="#portfolioModal2">
                         <img src="assets/project2.png" class="rounded-top" style="width: 100%; height: 100%; object-fit: contain;">
                     </div>
-                    <h5 class="fw-bold"><?php echo $lang_strings['project2']; ?></h5>
-                    <p><?php echo $lang_strings['project2Text']; ?></p>
+                    <h5 class="fw-bold">coffeeshop</h5>
+                    <p><span class="text-muted">GitHub Repository: </span><a href="https://github.com/schiWasTaken/coffeeshop">schiWasTaken/coffeeshop</a>
+                        <br>
+                        A point based coffee shop website built with NodeJS.</p>
                 </div>
                 <!-- Portfolio Card 3 -->
                 <div class="col-md-4 fade-in">
                     <div class="rounded mb-3 card portfolio-item" style="height: 600px;" data-bs-toggle="modal" data-bs-target="#portfolioModal3">
                         <img src="assets/project3.png" class="rounded-top" style="width: 100%; height: 100%; object-fit: contain;">
                     </div>
-                    <h5 class="fw-bold"><?php echo $lang_strings['project3']; ?></h5>
-                    <p><?php echo $lang_strings['project3Text']; ?></p>
+                    <h5 class="fw-bold">FF Laundry</h5>
+                    <p><span class="text-muted">GitHub Repository: </span><a href="https://github.com/schiWasTaken/FF_laundry">schiWasTaken/FF_laundry</a>
+                        <br>
+                        A laundry delivery service made more accessible, built with Laravel.</p>
                 </div>
             </div>
         </div>
@@ -149,8 +144,11 @@ if (file_exists($lang_file)) {
     <!-- Contact Section -->
     <section id="contact" class="py-5">
         <div class="container">
-            <h2 class="fw-bold text-center mb-5 fade-in"><?php echo $lang_strings['contact']; ?></h2>
+            <h2 class="fw-bold text-center mb-5 fade-in">Contact Me</h2>
             <div class="row text-center justify-content-center">
+                <p>
+                    (This is just a placeholder because I don't want to doxx myself in this account.)
+                </p>
                 <!-- Phone -->
                 <div class="col-md-3 mb-4 fade-in">
                     <div class="p-4 shadow rounded">
@@ -179,8 +177,7 @@ if (file_exists($lang_file)) {
         </div>
     </section>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/localization.js"></script>
     <script src="js/script.js"></script>
 </body>
-
 </html>
