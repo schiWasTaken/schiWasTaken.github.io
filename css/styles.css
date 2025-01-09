@@ -1,0 +1,183 @@
+:root {
+    --bg-color: #f8f9fa;
+    --text-color: #212529;
+    --text-muted: #343a40;
+    --navbar-bg: #ffffff;
+    --navbar-text: #000;
+    --card-bg: #fff;
+    --hero-overlay: rgba(0, 0, 0, 0.4);
+    --inverted-text-color: #f8f9fa;
+}
+
+body.dark-mode {
+    --bg-color: #212529;
+    --text-color: #f8f9fa;
+    --text-muted: #cfd4d6;
+    --navbar-bg: #343a40;
+    --navbar-text: #fff;
+    --card-bg: #343a40;
+    --inverted-text-color: #212529;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+p {
+    font-family: 'Inconsolata', monospace;    
+}
+
+/* Navbar Styling */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1030;
+    background-color: var(--navbar-bg) !important;
+    color: var(--navbar-text);
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease-in-out; 
+}
+
+.navbar.hidden {
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.navbar .nav-link {
+    color: var(--text-color);
+}
+
+.navbar .nav-link:hover {
+    color: var(--navbar-text);
+}
+
+.navbar .navbar-brand {
+    color: var(--navbar-text);
+}
+
+#toggle-dark-mode {
+    color: var(--navbar-text);
+}
+
+body.dark-mode #BadTechLogo {
+    fill: white;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 100vh;
+    background-image: url('../assets/hero-bg.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    z-index: 1;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--hero-overlay);
+    z-index: -1;
+}
+
+/* Portfolio Cards */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode .card {
+    background-color: var(--card-bg);
+}
+
+.modal-body img {
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+    margin: 0 auto;
+    display: block;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 20%;
+}
+
+/* JavaScript-enhanced parallax movement */
+.parallax-container.parallax-active::before {
+    transform: translateY(calc(var(--scroll-pos, 0) * -0.2%));
+}
+
+
+/* Fade-in Animation */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Contact Section */
+#contact .shadow {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+#contact .shadow:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode #contact img {
+    filter: invert(1);
+}
+
+#copiedMessage {
+    z-index: 1050;
+    transition: opacity 0.3s ease;
+}
+#copiedMessage.show {
+    display: block;
+}
+
+
+/* Text styles */
+.text-inverted {
+    color: var(--inverted-text-color) !important;
+}
+
+body.dark-mode .text-muted {
+    color: var(--text-muted) !important;
+}
+
+/* Fixes */
+@media (max-width: 992px) {
+    #navSeparator {
+        display: none !important;
+    }
+}
